@@ -581,6 +581,83 @@ a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{
 /* ── aviso de procesador bajo los iconos de pago ── */
 .pay-note{margin-top:9px;font-size:.82rem;line-height:1.5;color:#6b7784;text-align:center}
 
+/* ── header: botón proporcionado a la barra (70px de alto, logo de 40px) ── */
+.header-cta{padding:8px 17px;font-size:.86rem;border-radius:8px;
+  box-shadow:0 3px 9px rgba(248,136,56,.28)}
+
+/* ── móvil: el botón viaja pegado al menú, no suelto en el medio ── */
+@media(max-width:900px){
+  .header-inner{justify-content:flex-start}
+  .header-cta{margin-left:auto;padding:8px 15px;font-size:.84rem}
+  .burger{margin-left:4px}
+}
+@media(max-width:560px){
+  .header-cta{padding:8px 13px;font-size:.82rem}
+}
+/* ════════ ventanas de información legal ════════ */
+.lgm{display:none;position:fixed;inset:0;z-index:900;
+  background:rgba(12,58,92,.55);overflow-y:auto;padding:28px 14px;
+  -webkit-overflow-scrolling:touch}
+.lgm:target{display:block}
+.lgm-box{background:#fff;max-width:720px;margin:0 auto;border-radius:20px;
+  padding:34px 34px 30px;position:relative;box-shadow:0 22px 60px rgba(10,50,90,.3)}
+.lgm-x{position:absolute;top:14px;right:16px;width:40px;height:40px;
+  display:grid;place-content:center;border-radius:50%;background:var(--bg-blue);
+  color:var(--blue);font-size:1.5rem;line-height:1;text-decoration:none;
+  border:none;cursor:pointer;font-family:inherit}
+.lgm-x:hover{background:#d5e9f7}
+.lgm h2.lgm-t{font-family:'Baloo 2';font-weight:800;color:var(--blue);
+  font-size:1.7rem;line-height:1.2;margin:0 44px 10px 0}
+.lgm-sf{color:var(--muted);font-size:.97rem;margin:0 0 16px}
+.lgm-meta{display:flex;flex-wrap:wrap;gap:4px 18px;font-size:.78rem;
+  color:var(--muted);border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);padding:10px 0;margin-bottom:26px}
+.lgm-meta b{color:var(--ink-soft);font-weight:700}
+
+.lgm-callout{background:var(--cream);border-left:4px solid var(--orange);
+  border-radius:0 10px 10px 0;padding:16px 20px;margin:0 0 24px}
+.lgm-callout p{margin:0;font-size:.95rem;color:var(--ink)}
+.lgm-label{display:block;font-family:'Baloo 2';font-weight:800;
+  color:var(--orange);font-size:.85rem;letter-spacing:.04em;
+  text-transform:uppercase;margin-bottom:6px}
+
+.lgm-clause{margin:0 0 24px}
+.lgm-num{display:inline-block;background:var(--bg-blue);color:var(--blue);
+  font-weight:800;font-size:.72rem;padding:3px 9px;border-radius:20px;
+  margin-bottom:7px}
+.lgm-clause h2{font-family:'Baloo 2';font-weight:800;color:var(--ink);
+  font-size:1.12rem;line-height:1.3;margin:0 0 7px}
+.lgm-clause p{margin:0 0 11px;font-size:.94rem;line-height:1.68;color:var(--ink-soft)}
+.lgm-clause p:last-child{margin-bottom:0}
+.lgm ul,.lgm ol{margin:0 0 11px;padding-left:20px;font-size:.94rem;
+  line-height:1.68;color:var(--ink-soft)}
+.lgm li{margin-bottom:6px}
+.lgm strong{color:var(--ink);font-weight:800}
+.lgm a{color:var(--blue);font-weight:700}
+.lgm code{background:var(--bg-blue);color:var(--blue);padding:1px 6px;
+  border-radius:4px;font-size:.88em}
+
+.lgm-channels{display:grid;gap:11px;margin:0 0 24px}
+.lgm-channel{display:block;border:1px solid var(--line);border-radius:12px;
+  padding:15px 18px;text-decoration:none;color:inherit;background:var(--bg-pale)}
+a.lgm-channel:hover{border-color:var(--blue)}
+.lgm-k{display:block;font-size:.74rem;text-transform:uppercase;
+  letter-spacing:.08em;color:var(--muted);font-weight:800;margin-bottom:2px}
+.lgm-v{display:block;font-size:1.02rem;font-weight:800;color:var(--blue)}
+.lgm-n{display:block;font-size:.87rem;color:var(--muted);margin-top:3px}
+
+.lgm-foot{border-top:1px solid var(--line);margin-top:26px;padding-top:18px}
+.lgm-nav{display:flex;flex-wrap:wrap;gap:8px 18px;margin-bottom:12px}
+.lgm-nav a{font-size:.88rem;color:var(--muted);font-weight:700;text-decoration:none}
+.lgm-nav a:hover{color:var(--blue)}
+.lgm-colofon{font-size:.8rem;color:var(--muted);line-height:1.6;margin:0}
+
+@media(max-width:600px){
+  .lgm{padding:14px 10px}
+  .lgm-box{padding:26px 20px 24px;border-radius:16px}
+  .lgm h2.lgm-t{font-size:1.4rem;margin-right:40px}
+}
+@media(prefers-reduced-motion:reduce){.lgm{scroll-behavior:auto}}
 </style>
 </head>
 <body>
@@ -686,7 +763,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{
         <label class="opt">
           <input class="sr-only" type="radio" name="pack-hero" value="14.99">
           <div>
-            <div class="otitle">Obtén Little Genius</div>
+            <div class="otitle">Obtén Little Genius™</div>
             <div class="odesc">Más de 100 actividades imprimibles</div>
             <div class="osave">Ahorra 15,00 USD</div>
           </div>
@@ -700,7 +777,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{
           <input class="sr-only" type="radio" name="pack-hero" value="24.99" checked>
           <span class="tag-pop">MÁS POPULAR</span>
           <div>
-            <div class="otitle">Little Genius + Inteligencia Emocional</div>
+            <div class="otitle">Little Genius™ + Inteligencia Emocional</div>
             <div class="odesc">100+ actividades y 70+ de inteligencia emocional = 170+</div>
             <div class="osave">Ahorra 25,00 USD</div>
           </div>
@@ -1020,8 +1097,8 @@ a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{
       </ul>
       <div class="pack-extra">
         <span class="pe-tag">PACK COMPLETO · 24,99 USD</span>
-        <h3>Little Genius + Inteligencia Emocional</h3>
-        <p>Las <b>más de 100 actividades</b> de Little Genius, más un módulo aparte con
+        <h3>Little Genius™ + Inteligencia Emocional</h3>
+        <p>Las <b>más de 100 actividades</b> de Little Genius™, más un módulo aparte con
         <b>más de 70 actividades de inteligencia emocional</b>: reconocer lo que sienten,
         ponerle nombre y aprender a manejarlo.</p>
         <p class="pe-cuenta"><b>100+</b> actividades <span>+</span> <b>70+</b> de inteligencia
@@ -1100,7 +1177,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{
       <div class="deadline">PRECIO DE LANZAMIENTO · ACCESO INSTANTÁNEO POR EMAIL</div>
       <label class="opt">
         <input class="sr-only" type="radio" name="pack-cierre" value="14.99">
-        <div><div class="otitle">Obtén Little Genius</div>
+        <div><div class="otitle">Obtén Little Genius™</div>
         <div class="odesc">Más de 100 actividades imprimibles</div>
         <div class="osave">Ahorra 15,00 USD</div></div>
         <div><div class="oprice">14,99 USD</div><div class="ooldprice">29,99 USD</div></div>
@@ -1108,7 +1185,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{
       <label class="opt sel">
         <input class="sr-only" type="radio" name="pack-cierre" value="24.99" checked>
         <span class="tag-pop">MÁS POPULAR</span>
-        <div><div class="otitle">Little Genius + Inteligencia Emocional</div>
+        <div><div class="otitle">Little Genius™ + Inteligencia Emocional</div>
         <div class="odesc">100+ actividades y 70+ de inteligencia emocional = 170+</div>
         <div class="osave">Ahorra 25,00 USD</div></div>
         <div><div class="oprice">24,99 USD</div><div class="ooldprice">49,99 USD</div></div>
@@ -1171,10 +1248,10 @@ a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{
       <div>
         <h3>Información</h3>
         <ul class="foot-links">
-          <li><a href="/contacto.html">Contáctanos</a></li>
-          <li><a href="/terminos.html">Términos de compra</a></li>
-          <li><a href="/reembolso.html">Política de reembolso</a></li>
-          <li><a href="/privacidad.html">Política de privacidad</a></li>
+          <li><a href="#contacto">Contáctanos</a></li>
+          <li><a href="#terminos">Términos de compra</a></li>
+          <li><a href="#reembolso">Política de reembolso</a></li>
+          <li><a href="#privacidad">Política de privacidad</a></li>
         </ul>
       </div>
       <div>
@@ -1578,5 +1655,572 @@ a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{
 })();
 </script>
 
+
+<div class="lgm" id="contacto" role="dialog" aria-modal="true" aria-labelledby="t-contacto">
+  <div class="lgm-box">
+    <a class="lgm-x" href="#" aria-label="Cerrar">&times;</a>
+    <h2 class="lgm-t" id="t-contacto">Contacto</h2>
+    <p class="lgm-sf">Cómo comunicarte con nosotros, qué canal conviene según tu consulta y en cuánto tiempo respondemos.</p>
+    <div class="lgm-meta">
+      <span>Documento &middot; <b>Contacto</b></span>
+      <span>Titular &middot; <b>JBecom Group LLC</b></span>
+      <span>Actualizado &middot; <b>23 de julio de 2026</b></span>
+    </div>
+<div class="lgm-channels">
+        <a class="lgm-channel" href="mailto:littlegeniuslat@gmail.com">
+          <span class="lgm-k">Email</span>
+          <span class="lgm-v">littlegeniuslat@gmail.com</span>
+          <span class="lgm-n">Canal principal. Respondemos dentro de las 24 horas hábiles.</span>
+        </a>
+        <div class="lgm-channel">
+          <span class="lgm-k">Titular</span>
+          <span class="lgm-v" style="color:var(--ink)">JBecom Group LLC</span>
+          <span class="lgm-n">Santa Cruz, Bolivia</span>
+        </div>
+      </div>
+      <section class="lgm-clause">
+        <span class="lgm-num">01</span>
+        <h2>Compras, cobros y reembolsos</h2>
+        <p>Todas las compras se procesan mediante <strong>Hotmart</strong>, nuestra
+        plataforma de pago y entrega. Si tu consulta es sobre un cobro, una factura,
+        un reembolso o el acceso a tu compra, el camino más rápido es la propia
+        plataforma, porque ahí queda registrada tu transacción.</p>
+        <ul>
+          <li>Soporte de Hotmart: <a href="https://help.hotmart.com" target="_blank" rel="noopener">help.hotmart.com</a></li>
+          <li>Los pedidos de reembolso se gestionan según nuestra
+              <a href="#reembolso">política de reembolso</a>.</li>
+        </ul>
+        <p>Si ya escribiste a Hotmart y no obtuviste respuesta, escribinos a
+        <a href="mailto:littlegeniuslat@gmail.com">littlegeniuslat@gmail.com</a> con el correo que usaste al comprar
+        y te acompañamos en el proceso.</p>
+      </section>
+      <section class="lgm-clause">
+        <span class="lgm-num">02</span>
+        <h2>No recibí el acceso a mi compra</h2>
+        <p>El acceso se envía de forma automática al correo indicado en el pago,
+        normalmente en cuestión de minutos. Antes de escribirnos, revisá:</p>
+        <ul>
+          <li>La carpeta de <strong>spam o promociones</strong> de tu correo.</li>
+          <li>Que el correo del pago no tenga un error de tipeo.</li>
+          <li>Tu cuenta en <a href="https://purchase.hotmart.com" target="_blank" rel="noopener">purchase.hotmart.com</a>,
+              donde queda disponible todo lo que compraste.</li>
+        </ul>
+        <p>Si después de eso seguís sin acceso, escribinos con el nombre completo y
+        el correo de la compra y lo resolvemos.</p>
+      </section>
+      <section class="lgm-clause">
+        <span class="lgm-num">03</span>
+        <h2>Qué incluir en tu mensaje</h2>
+        <p>Para responderte en una sola vuelta, contanos:</p>
+        <ul>
+          <li>El <strong>correo con el que hiciste la compra</strong>.</li>
+          <li>La fecha aproximada y el pack adquirido.</li>
+          <li>Qué necesitás resolver, en una frase.</li>
+        </ul>
+      </section>
+      <section class="lgm-clause">
+        <span class="lgm-num">04</span>
+        <h2>Tiempos de respuesta</h2>
+        <p>Atendemos de lunes a viernes de 9:00 a 18:00, hora de Bolivia. Los mensajes
+        que llegan fines de semana o feriados se responden el siguiente día hábil.
+        Contestamos todos los mensajes en orden de llegada.</p>
+      </section>
+      <section class="lgm-clause">
+        <span class="lgm-num">05</span>
+        <h2>Privacidad y datos personales</h2>
+        <p>Si querés acceder, corregir o eliminar tus datos personales, escribinos a
+        <a href="mailto:littlegeniuslat@gmail.com">littlegeniuslat@gmail.com</a> con el asunto <code>Datos personales</code>.
+        El detalle de qué guardamos y por cuánto tiempo está en la
+        <a href="#privacidad">política de privacidad</a>.</p>
+      </section>
+    <div class="lgm-foot">
+      <div class="lgm-nav">
+        <a href="#terminos">Términos de compra</a>
+        <a href="#reembolso">Política de reembolso</a>
+        <a href="#privacidad">Política de privacidad</a>
+      </div>
+      <p class="lgm-colofon">
+        JBecom Group LLC &middot; Santa Cruz, Bolivia<br>
+        Consultas: <a href="mailto:littlegeniuslat@gmail.com">littlegeniuslat@gmail.com</a><br>
+        El procesamiento de pagos y la entrega del producto se realizan a través de Hotmart.
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="lgm" id="terminos" role="dialog" aria-modal="true" aria-labelledby="t-terminos">
+  <div class="lgm-box">
+    <a class="lgm-x" href="#" aria-label="Cerrar">&times;</a>
+    <h2 class="lgm-t" id="t-terminos">Términos de compra</h2>
+    <p class="lgm-sf">Las condiciones que aplican al comprar y usar nuestro producto digital: precios, entrega, licencia de uso y garantía.</p>
+    <div class="lgm-meta">
+      <span>Documento &middot; <b>Condiciones generales</b></span>
+      <span>Titular &middot; <b>JBecom Group LLC</b></span>
+      <span>Actualizado &middot; <b>23 de julio de 2026</b></span>
+    </div>
+<div class="lgm-callout">
+        <span class="lgm-label">En resumen</span>
+        <p>Estás comprando un producto digital de acceso inmediato, para uso personal.
+        El pago lo procesa Hotmart. Tenés <strong>7 días de garantía</strong>
+        para pedir la devolución total, sin necesidad de justificarte.</p>
+      </div>
+      <section class="lgm-clause">
+        <span class="lgm-num">01</span>
+        <h2>Quiénes somos y qué regulan estos términos</h2>
+        <p>Este sitio es operado por <strong>JBecom Group LLC</strong>, con domicilio en
+        Santa Cruz, Bolivia (en adelante, «nosotros»). Estos términos regulan la compra
+        y el uso del producto digital ofrecido en littlegeniuslat.vercel.app.</p>
+        <p>Al completar una compra confirmás que leíste y aceptás estas condiciones,
+        junto con la <a href="#privacidad">política de privacidad</a> y la
+        <a href="#reembolso">política de reembolso</a>.</p>
+      </section>
+      <section class="lgm-clause">
+        <span class="lgm-num">02</span>
+        <h2>Naturaleza del producto</h2>
+        <p>Lo que se comercializa es un <strong>producto digital</strong>: material
+        informativo y educativo de acceso online. No se envía nada físico y no hay
+        costos de envío ni aduana.</p>
+        <p>El detalle de qué incluye cada pack, incluidos los materiales adicionales
+        o bonos, es el que figura en la página de venta al momento de la compra.</p>
+      </section>
+      <section class="lgm-clause">
+        <span class="lgm-num">03</span>
+        <h2>Precios y moneda</h2>
+        <p>Los precios se muestran en dólares estadounidenses (USD) salvo indicación
+        expresa en contrario. El importe final que verás en el checkout es el que se
+        cobra.</p>
+        <ul>
+          <li>Tu banco puede aplicar <strong>conversión de moneda, impuestos o
+              percepciones</strong> propios de tu país. Esos cargos no los definimos
+              ni los recibimos nosotros.</li>
+          <li>Las promociones tienen vigencia limitada. El precio aplicable es el
+              vigente al momento de confirmar el pago.</li>
+        </ul>
+      </section>
+      <section class="lgm-clause">
+        <span class="lgm-num">04</span>
+        <h2>Pago y procesamiento</h2>
+        <p>Las ventas se procesan íntegramente a través de <strong>Hotmart</strong>,
+        que actúa como plataforma de pago y distribución. Los medios disponibles
+        (tarjeta de crédito, tarjeta de débito, PayPal y métodos locales) dependen
+        del país desde el que comprás y los define Hotmart.</p>
+        <p>No almacenamos ni tenemos acceso a los datos de tu tarjeta en ningún momento.</p>
+      </section>
+      <section class="lgm-clause">
+        <span class="lgm-num">05</span>
+        <h2>Entrega y acceso</h2>
+        <p>Una vez aprobado el pago, el acceso se envía de forma automática al correo
+        electrónico que hayas indicado, en general dentro de los minutos siguientes.
+        También queda disponible en tu cuenta de Hotmart.</p>
+        <p>Es tu responsabilidad ingresar un correo válido. Si el pago fue aprobado y
+        no recibiste el acceso, escribinos a <a href="mailto:littlegeniuslat@gmail.com">littlegeniuslat@gmail.com</a>
+        y lo resolvemos.</p>
+      </section>
+      <section class="lgm-clause">
+        <span class="lgm-num">06</span>
+        <h2>Licencia de uso</h2>
+        <p>La compra te otorga una licencia <strong>personal, individual, no exclusiva
+        e intransferible</strong> para usar el material adquirido.</p>
+        <p>No está permitido:</p>
+        <ul>
+          <li>Compartir, revender, ceder o prestar tus credenciales de acceso.</li>
+          <li>Copiar, reproducir o distribuir el contenido, total o parcialmente.</li>
+          <li>Usar el material para crear productos derivados o para reventa.</li>
+          <li>Publicar el contenido en sitios de descarga, grupos o redes sociales.</li>
+        </ul>
+        <p>El incumplimiento habilita la cancelación inmediata del acceso, sin
+        reembolso, además de las acciones legales que correspondan.</p>
+      </section>
+      <section class="lgm-clause">
+        <span class="lgm-num">07</span>
+        <h2>Propiedad intelectual</h2>
+        <p>Todo el contenido —textos, imágenes, videos, materiales descargables, marca
+        y diseño del sitio— es propiedad de JBecom Group LLC o se utiliza bajo licencia,
+        y está protegido por la legislación de propiedad intelectual aplicable. La compra
+        no transfiere ningún derecho de propiedad sobre el contenido.</p>
+      </section>
+      <section class="lgm-clause">
+        <span class="lgm-num">08</span>
+        <h2>Alcance del producto y ausencia de garantía de resultados</h2>
+        <p>El material tiene <strong>carácter informativo y educativo</strong>. Los
+        resultados dependen de factores individuales —dedicación, contexto, constancia
+        y punto de partida— que están fuera de nuestro control.</p>
+        <p>Por eso <strong>no garantizamos resultados específicos</strong>. Los
+        testimonios y ejemplos que aparecen en la página de venta reflejan experiencias
+        particulares y no constituyen una promesa de rendimiento.</p>
+        <p>El material es de apoyo educativo y <strong>no constituye un tratamiento,
+        diagnóstico ni evaluación</strong> de dificultades de atención, aprendizaje o
+        desarrollo. Si tenés dudas sobre el desarrollo de tu hijo o hija, consultá con
+        su pediatra o con un profesional de psicopedagogía.</p>
+      </section>
+      <section class="lgm-clause">
+        <span class="lgm-num">09</span>
+        <h2>Requisitos técnicos</h2>
+        <p>Para acceder al material necesitás conexión a internet y un dispositivo
+        con navegador actualizado. No nos responsabilizamos por fallas derivadas de tu
+        conexión, tu equipo o restricciones de tu proveedor.</p>
+      </section>
+      <section class="lgm-clause">
+        <span class="lgm-num">10</span>
+        <h2>Soporte</h2>
+        <p>Podés escribirnos a <a href="mailto:littlegeniuslat@gmail.com">littlegeniuslat@gmail.com</a> de lunes a viernes. Los canales de atención están
+        listados en la <a href="#contacto">página de contacto</a>.</p>
+      </section>
+      <section class="lgm-clause">
+        <span class="lgm-num">11</span>
+        <h2>Reembolsos</h2>
+        <p>Contás con <strong>7 días corridos</strong> desde la compra
+        para solicitar la devolución total del importe. Las condiciones y el paso a paso
+        están en la <a href="#reembolso">política de reembolso</a>.</p>
+      </section>
+      <section class="lgm-clause">
+        <span class="lgm-num">12</span>
+        <h2>Modificaciones</h2>
+        <p>Podemos actualizar estos términos para reflejar cambios en el producto o en
+        la normativa aplicable. La versión vigente es siempre la publicada en esta página,
+        con su fecha de actualización. Los cambios no afectan compras ya realizadas.</p>
+      </section>
+      <section class="lgm-clause">
+        <span class="lgm-num">13</span>
+        <h2>Ley aplicable y jurisdicción</h2>
+        <p>JBecom Group LLC opera desde Santa Cruz, Bolivia. Cualquier controversia
+        derivada de estos términos se procurará resolver de buena fe por vía directa,
+        escribiendo a <a href="mailto:littlegeniuslat@gmail.com">littlegeniuslat@gmail.com</a>, antes de recurrir a
+        instancias judiciales; agotada esa vía, se someterá a los tribunales competentes
+        del domicilio de operación del titular.</p>
+        <p>Nada de lo anterior afecta los derechos que la normativa de defensa del
+        consumidor de tu país de residencia te reconozca como comprador, que se aplican
+        en todo caso.</p>
+      </section>
+    <div class="lgm-foot">
+      <div class="lgm-nav">
+        <a href="#contacto">Contacto</a>
+        <a href="#reembolso">Política de reembolso</a>
+        <a href="#privacidad">Política de privacidad</a>
+      </div>
+      <p class="lgm-colofon">
+        JBecom Group LLC &middot; Santa Cruz, Bolivia<br>
+        Consultas: <a href="mailto:littlegeniuslat@gmail.com">littlegeniuslat@gmail.com</a><br>
+        El procesamiento de pagos y la entrega del producto se realizan a través de Hotmart.
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="lgm" id="reembolso" role="dialog" aria-modal="true" aria-labelledby="t-reembolso">
+  <div class="lgm-box">
+    <a class="lgm-x" href="#" aria-label="Cerrar">&times;</a>
+    <h2 class="lgm-t" id="t-reembolso">Política de reembolso</h2>
+    <p class="lgm-sf">Cuánto tiempo tenés para pedir la devolución, cómo se solicita y en cuánto se acredita el dinero.</p>
+    <div class="lgm-meta">
+      <span>Documento &middot; <b>Garantía y devoluciones</b></span>
+      <span>Titular &middot; <b>JBecom Group LLC</b></span>
+      <span>Actualizado &middot; <b>23 de julio de 2026</b></span>
+    </div>
+<div class="lgm-callout">
+        <span class="lgm-label">Lo esencial</span>
+        <p>Tenés <strong>7 días corridos</strong> desde la fecha de compra
+        para pedir la devolución del 100% de lo que pagaste. No hace falta que expliques
+        por qué. Es la <strong>Garantía Hotmart</strong>: el pedido se hace desde la
+        propia plataforma y el dinero vuelve por el mismo medio con el que pagaste.</p>
+      </div>
+      <section class="lgm-clause">
+        <span class="lgm-num">01</span>
+        <h2>Qué cubre la garantía</h2>
+        <p>Cubre el <strong>importe total</strong> abonado por el producto y los bonos
+        incluidos en el pack, en una única devolución. La garantía la administra y
+        respalda <strong>Hotmart</strong>, no depende de nuestra aprobación.</p>
+        <p>Aplica a todos los packs disponibles en la página de venta, sin distinción
+        de precio.</p>
+      </section>
+      <section class="lgm-clause">
+        <span class="lgm-num">02</span>
+        <h2>Plazo</h2>
+        <p>El plazo es de <strong>7 días corridos</strong> contados
+        desde la fecha en que se aprobó el pago, no desde el primer ingreso al material.
+        Vencido ese plazo, la solicitud no puede procesarse.</p>
+      </section>
+      <section class="lgm-clause">
+        <span class="lgm-num">03</span>
+        <h2>Cómo solicitarlo</h2>
+        <p>El reembolso se gestiona directamente en Hotmart, que es quien procesó el
+        cobro:</p>
+        <ol>
+          <li>Ingresá a <a href="https://purchase.hotmart.com" target="_blank" rel="noopener">purchase.hotmart.com</a>
+              con el correo que usaste al comprar.</li>
+          <li>Abrí la compra correspondiente.</li>
+          <li>Seleccioná la opción de <strong>solicitar reembolso</strong> y confirmá.</li>
+        </ol>
+        <p>También podés hacerlo desde el <strong>correo de confirmación de compra</strong>,
+        que incluye el enlace directo, o escribiendo a
+        <a href="https://help.hotmart.com" target="_blank" rel="noopener">help.hotmart.com</a>.</p>
+        <p>Si tenés cualquier dificultad con el proceso, escribinos a
+        <a href="mailto:littlegeniuslat@gmail.com">littlegeniuslat@gmail.com</a> y te guiamos. No necesitás negociar
+        con nosotros antes de pedirlo.</p>
+      </section>
+      <section class="lgm-clause">
+        <span class="lgm-num">04</span>
+        <h2>Plazos de acreditación</h2>
+        <p>Una vez aprobada la solicitud, el dinero se devuelve por el <strong>mismo
+        medio de pago</strong> utilizado. Los tiempos dependen de tu banco o procesador:</p>
+        <ul>
+          <li><strong>Tarjeta de crédito:</strong> suele reflejarse en el siguiente
+              resumen o en el posterior, según la fecha de cierre.</li>
+          <li><strong>Tarjeta de débito y medios locales:</strong> habitualmente entre
+              5 y 15 días hábiles.</li>
+          <li><strong>PayPal:</strong> normalmente dentro de las 72 horas hábiles.</li>
+        </ul>
+        <p>Estos plazos los define la entidad emisora, no nosotros ni Hotmart.</p>
+      </section>
+      <section class="lgm-clause">
+        <span class="lgm-num">05</span>
+        <h2>Qué pasa con el acceso</h2>
+        <p>Al aprobarse el reembolso, el acceso al material y a los bonos se
+        <strong>revoca de forma automática</strong>. El contenido descargado antes de la
+        devolución sigue protegido por los <a href="#terminos">términos de compra</a>:
+        no puede conservarse, compartirse ni distribuirse.</p>
+      </section>
+      <section class="lgm-clause">
+        <span class="lgm-num">06</span>
+        <h2>Situaciones excluidas</h2>
+        <p>No se procesan solicitudes cuando:</p>
+        <ul>
+          <li>Se presentan <strong>fuera del plazo</strong> de 7 días.</li>
+          <li>Existe evidencia de <strong>distribución no autorizada</strong> del
+              material o de uso fraudulento.</li>
+          <li>Se detecta un patrón de compra y devolución reiterada sobre el mismo
+              producto.</li>
+        </ul>
+      </section>
+      <section class="lgm-clause">
+        <span class="lgm-num">07</span>
+        <h2>Cobros que no reconocés</h2>
+        <p>Si aparece en tu resumen un cargo que no identificás, escribinos primero a
+        <a href="mailto:littlegeniuslat@gmail.com">littlegeniuslat@gmail.com</a> antes de iniciar un contracargo con tu
+        banco. Verificar el cobro suele tomar menos tiempo que una disputa bancaria y
+        podemos resolverlo directamente.</p>
+      </section>
+      <section class="lgm-clause">
+        <span class="lgm-num">08</span>
+        <h2>Tus derechos como consumidor</h2>
+        <p>Esta política complementa —y en ningún caso limita— los derechos que la
+        normativa de defensa del consumidor de tu país de residencia te reconoce,
+        incluido el derecho de retracto donde resulte aplicable.</p>
+      </section>
+    <div class="lgm-foot">
+      <div class="lgm-nav">
+        <a href="#contacto">Contacto</a>
+        <a href="#terminos">Términos de compra</a>
+        <a href="#privacidad">Política de privacidad</a>
+      </div>
+      <p class="lgm-colofon">
+        JBecom Group LLC &middot; Santa Cruz, Bolivia<br>
+        Consultas: <a href="mailto:littlegeniuslat@gmail.com">littlegeniuslat@gmail.com</a><br>
+        El procesamiento de pagos y la entrega del producto se realizan a través de Hotmart.
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="lgm" id="privacidad" role="dialog" aria-modal="true" aria-labelledby="t-privacidad">
+  <div class="lgm-box">
+    <a class="lgm-x" href="#" aria-label="Cerrar">&times;</a>
+    <h2 class="lgm-t" id="t-privacidad">Política de privacidad</h2>
+    <p class="lgm-sf">Qué datos recogemos, para qué los usamos, con quién los compartimos y cómo podés controlarlos.</p>
+    <div class="lgm-meta">
+      <span>Documento &middot; <b>Protección de datos</b></span>
+      <span>Titular &middot; <b>JBecom Group LLC</b></span>
+      <span>Actualizado &middot; <b>23 de julio de 2026</b></span>
+    </div>
+<div class="lgm-callout">
+        <span class="lgm-label">En una línea</span>
+        <p>Guardamos lo mínimo para entregarte tu compra y darte soporte. No vendemos
+        tus datos. Usamos cookies de medición para saber qué anuncios funcionan, y
+        podés pedirnos que borremos todo cuando quieras.</p>
+      </div>
+      <section class="lgm-clause">
+        <span class="lgm-num">01</span>
+        <h2>Responsable del tratamiento</h2>
+        <p>El responsable de los datos recogidos en littlegeniuslat.vercel.app es
+        <strong>JBecom Group LLC</strong>, con domicilio en Santa Cruz, Bolivia.
+        Contacto para cuestiones de privacidad:
+        <a href="mailto:littlegeniuslat@gmail.com">littlegeniuslat@gmail.com</a>.</p>
+      </section>
+      <section class="lgm-clause">
+        <span class="lgm-num">02</span>
+        <h2>Qué datos recogemos</h2>
+        <p><strong>Datos que nos das vos:</strong></p>
+        <ul>
+          <li>Nombre y apellido, correo electrónico y teléfono, al comprar o al
+              escribirnos.</li>
+          <li>Datos de facturación requeridos por la plataforma de pago
+              (documento o dirección, según tu país).</li>
+        </ul>
+        <p><strong>Datos que se generan al navegar:</strong></p>
+        <ul>
+          <li>Dirección IP, tipo de dispositivo, navegador e idioma.</li>
+          <li>Páginas visitadas, tiempo de permanencia y clics dentro del sitio.</li>
+          <li>Origen de la visita (buscador, anuncio, enlace directo) e identificadores
+              de campaña.</li>
+        </ul>
+        <p><strong>Datos que nunca recibimos:</strong> el número de tu tarjeta, su código
+        de seguridad y tus credenciales bancarias. Esa información viaja directo al
+        procesador de pagos y no pasa por nuestros servidores en ningún momento.</p>
+      </section>
+      <section class="lgm-clause">
+        <span class="lgm-num">03</span>
+        <h2>Para qué los usamos</h2>
+        <ul>
+          <li><strong>Entregar tu compra</strong> y darte acceso al material.</li>
+          <li><strong>Responder consultas</strong> y brindar soporte.</li>
+          <li><strong>Procesar pagos y reembolsos</strong> a través de Hotmart.</li>
+          <li><strong>Medir el rendimiento</strong> del sitio y de nuestras campañas
+              publicitarias.</li>
+          <li><strong>Enviar comunicaciones</strong> sobre el producto, si diste tu
+              consentimiento. Cada envío incluye un enlace para darte de baja.</li>
+          <li><strong>Cumplir obligaciones legales</strong>, contables y fiscales.</li>
+        </ul>
+        <p>No usamos tus datos para tomar decisiones automatizadas con efectos jurídicos
+        sobre vos.</p>
+      </section>
+      <section class="lgm-clause">
+        <span class="lgm-num">04</span>
+        <h2>Base legal</h2>
+        <p>Tratamos tus datos sobre la base de: la <strong>ejecución del contrato</strong>
+        de compraventa, tu <strong>consentimiento</strong> (cookies de medición y
+        comunicaciones comerciales), nuestro <strong>interés legítimo</strong> en mejorar
+        el sitio y prevenir fraude, y el <strong>cumplimiento de obligaciones legales</strong>.</p>
+      </section>
+      <section class="lgm-clause">
+        <span class="lgm-num">05</span>
+        <h2>Con quién los compartimos</h2>
+        <p>Compartimos datos únicamente con proveedores necesarios para operar, y solo
+        lo imprescindible:</p>
+        <ul>
+          <li><strong>Hotmart</strong> — procesamiento de pagos, facturación y entrega
+              del producto.</li>
+          <li><strong>Meta Platforms</strong> — medición de campañas publicitarias en
+              Facebook e Instagram mediante el píxel.</li>
+          <li><strong>Vercel</strong> — alojamiento del sitio web.</li>
+          <li><strong>Proveedor de correo electrónico</strong> — envío de mensajes
+              transaccionales y comerciales.</li>
+        </ul>
+        <p><strong>No vendemos, alquilamos ni cedemos tus datos personales a terceros
+        con fines comerciales.</strong> Solo los entregaríamos a una autoridad si mediara
+        un requerimiento legal válido.</p>
+      </section>
+      <section class="lgm-clause">
+        <span class="lgm-num">06</span>
+        <h2>Cookies y tecnologías de medición</h2>
+        <p>Usamos cookies y píxeles para que el sitio funcione y para entender qué
+        contenidos y anuncios resultan útiles.</p>
+        <ul>
+          <li><strong>Técnicas:</strong> necesarias para que la página cargue y recuerde
+              tus preferencias básicas. No requieren consentimiento.</li>
+          <li><strong>De medición y publicidad:</strong> principalmente el
+              <strong>píxel de Meta</strong>, que registra acciones como ver la página,
+              seleccionar un pack o iniciar el checkout. Con eso medimos el rendimiento
+              de las campañas y mostramos anuncios más relevantes.</li>
+        </ul>
+        <p>Podés bloquear o eliminar cookies desde la configuración de tu navegador.
+        También podés gestionar la publicidad personalizada de Meta desde
+        <a href="https://www.facebook.com/adpreferences" target="_blank" rel="noopener">facebook.com/adpreferences</a>.
+        Bloquear cookies de medición no afecta tu compra ni tu acceso al producto.</p>
+      </section>
+      <section class="lgm-clause">
+        <span class="lgm-num">07</span>
+        <h2>Transferencias internacionales</h2>
+        <p>Algunos de nuestros proveedores procesan información en servidores ubicados
+        fuera de tu país. En esos casos, la transferencia se ampara en las garantías
+        contractuales y en los mecanismos de protección que esos proveedores tienen
+        establecidos conforme a la normativa aplicable.</p>
+      </section>
+      <section class="lgm-clause">
+        <span class="lgm-num">08</span>
+        <h2>Cuánto tiempo los conservamos</h2>
+        <ul>
+          <li><strong>Datos de compra:</strong> el plazo exigido por la normativa fiscal
+              y contable aplicable.</li>
+          <li><strong>Consultas de soporte:</strong> hasta 24 meses desde el último
+              contacto.</li>
+          <li><strong>Datos de navegación:</strong> según la política de retención de
+              cada proveedor de medición.</li>
+          <li><strong>Lista de correo:</strong> hasta que solicites la baja.</li>
+        </ul>
+      </section>
+      <section class="lgm-clause">
+        <span class="lgm-num">09</span>
+        <h2>Tus derechos</h2>
+        <p>En cualquier momento podés pedirnos:</p>
+        <ul>
+          <li><strong>Acceso</strong> — saber qué datos tuyos tenemos.</li>
+          <li><strong>Rectificación</strong> — corregir datos inexactos.</li>
+          <li><strong>Supresión</strong> — que los borremos, salvo los que debamos
+              conservar por obligación legal.</li>
+          <li><strong>Oposición y limitación</strong> — restringir determinados usos.</li>
+          <li><strong>Portabilidad</strong> — recibir tus datos en formato legible.</li>
+          <li><strong>Retirar tu consentimiento</strong> en cualquier momento.</li>
+        </ul>
+        <p>Escribinos a <a href="mailto:littlegeniuslat@gmail.com">littlegeniuslat@gmail.com</a> con el asunto
+        <code>Datos personales</code>. Respondemos dentro de los 30 días. Si considerás
+        que no atendimos tu pedido, podés reclamar ante la autoridad de protección de
+        datos de tu país.</p>
+      </section>
+      <section class="lgm-clause">
+        <span class="lgm-num">10</span>
+        <h2>Seguridad</h2>
+        <p>El sitio opera bajo conexión cifrada (HTTPS) y el acceso a la información
+        de clientes está restringido a las personas que lo necesitan para dar soporte.
+        Ningún sistema es infalible, pero mantenemos medidas técnicas y organizativas
+        razonables para proteger tus datos.</p>
+      </section>
+      <section class="lgm-clause">
+        <span class="lgm-num">11</span>
+        <h2>Menores de edad</h2>
+        <p>El producto está dirigido a mayores de 18 años. No recogemos de forma
+        consciente datos de menores. Si detectamos que recibimos información de un menor,
+        la eliminamos. Si sos madre, padre o tutor y creés que esto ocurrió, escribinos
+        a <a href="mailto:littlegeniuslat@gmail.com">littlegeniuslat@gmail.com</a>.</p>
+      </section>
+      <section class="lgm-clause">
+        <span class="lgm-num">12</span>
+        <h2>Cambios en esta política</h2>
+        <p>Si actualizamos esta política, publicamos la nueva versión en esta misma
+        página con su fecha de revisión. Cuando el cambio sea sustancial y tengamos tu
+        correo, te avisamos.</p>
+      </section>
+    <div class="lgm-foot">
+      <div class="lgm-nav">
+        <a href="#contacto">Contacto</a>
+        <a href="#terminos">Términos de compra</a>
+        <a href="#reembolso">Política de reembolso</a>
+      </div>
+      <p class="lgm-colofon">
+        JBecom Group LLC &middot; Santa Cruz, Bolivia<br>
+        Consultas: <a href="mailto:littlegeniuslat@gmail.com">littlegeniuslat@gmail.com</a><br>
+        El procesamiento de pagos y la entrega del producto se realizan a través de Hotmart.
+      </p>
+    </div>
+  </div>
+</div>
+
+<script>
+/* cerrar las ventanas de información con Escape o clic en el fondo */
+(function(){
+  function cerrar(){
+    if(location.hash && document.querySelector('.lgm'+location.hash)){
+      history.replaceState(null,'',location.pathname+location.search);
+      window.dispatchEvent(new HashChangeEvent('hashchange'));
+    }
+  }
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape') cerrar(); });
+  document.querySelectorAll('.lgm').forEach(function(m){
+    m.addEventListener('click',function(e){ if(e.target===m) cerrar(); });
+  });
+  document.querySelectorAll('.lgm-x').forEach(function(b){
+    b.addEventListener('click',function(e){ e.preventDefault(); cerrar(); });
+  });
+})();
+</script>
 </body>
 </html>

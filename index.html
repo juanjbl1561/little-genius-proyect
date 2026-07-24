@@ -2205,20 +2205,18 @@ a.lgm-channel:hover{border-color:var(--blue)}
 </div>
 
 <script>
-/* cerrar las ventanas de información con Escape o clic en el fondo */
+/* cerrar las ventanas con Escape o clic en el fondo.
+   El botón × es un enlace nativo a '#': limpia el :target por sí solo,
+   así que no hay que interceptarlo. */
 (function(){
   function cerrar(){
     if(location.hash && document.querySelector('.lgm'+location.hash)){
-      history.replaceState(null,'',location.pathname+location.search);
-      window.dispatchEvent(new HashChangeEvent('hashchange'));
+      location.hash = '';
     }
   }
   document.addEventListener('keydown',function(e){ if(e.key==='Escape') cerrar(); });
   document.querySelectorAll('.lgm').forEach(function(m){
     m.addEventListener('click',function(e){ if(e.target===m) cerrar(); });
-  });
-  document.querySelectorAll('.lgm-x').forEach(function(b){
-    b.addEventListener('click',function(e){ e.preventDefault(); cerrar(); });
   });
 })();
 </script>
